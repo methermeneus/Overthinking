@@ -1,0 +1,106 @@
+<html>
+	<head>
+<style>
+	body {
+		background-color: #a5a58c;
+	}
+	h1,h2,h3,h4,h5 {
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	span {
+		text-decoration: underline;
+	}
+	sup,sub {
+		font-size: 50%;
+	}
+	p {
+		width: 60%;
+		text-align: justify;
+		margin: 0;
+		margin-top: 1em;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+		text-indent: 2em;
+	}
+	.copy {
+		font-size: 70%;
+		text-indent: 0;
+		font-style: italic;
+		margin-top:  6em;
+		margin-left: 10em;
+	}
+	ul,li {
+		width: 70%;
+		margin: 0;
+		margin-top: 1em;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: justify;
+		padding: 0;
+	}
+	hr {
+		height: 1em;
+		width: 24em;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		padding: 0;
+		color: #777777;
+		background-color: #777777;
+	}
+</style>
+	<title>Hamster Wheel Battery Charger</title>
+	</head>
+	<body>
+		<h2>How many hamsters on hamster wheels would it take to charge a Tesla battery?</h2>
+		<h3>submitted by Dave via Facebook</h3>
+		<hr>
+		<p>Well, now, that depends on a lot of things. The short answer is, it&rsquo;d only take one hamster with a <span title="thing that increases voltage at the cost of current">step-up transformer</span> and a <span title="thing that turns AC current into DC">rectifier</span>. Of course, that would take a <em>really</em> long time, and the answer doesn&rsquo;t really go into enough detail to be worth exploring, so let&rsquo;s see if we can fix that, shall we?</p>
+		<p>In detail, there&rsquo;s two ways to think about this problem:
+			<ul>
+				<li>As a theoretical exercise in physics, using idealized equations and ignoring things like entropy, how well-engineered individual components are, and pretending all wires are superconductors</li>
+				<li>As an engineering exercise, figuring out just how practical this really is</li>
+			</ul></p>
+		<p>I don&rsquo;t think it&rsquo;ll come as any great surprise that this isn&rsquo;t very practical. It may surprise you just how much easier the problem is from an engineering perspective.</p>
+		<hr>
+		<p>Before we do any calculations, most of the words in that question need to be defined. &ldquo;How&rdquo; is a determiner substituting for a prepositional phrase, which transports to the complementizer position when used as a wh- question word in English non-in-situ&hellip; Okay, not every word. Actually, it turns out that all we really need to define is hamster, hamster wheel, and charge.
+		<ul>
+			<li><b>hamster:</b> There are about twenty-five species of hamster, ranging in weight from half an ounce to about ten ounces. Dave was probably thinking of a pet hamster, of which there are five common species, including one of the smallest and one of the largest, so that doesn&rsquo;t really help much. However, since <span title="aka: golden hamsters">Syrian hamsters</span> are the most common pets, the most commonly used in lab tests, the largest of the pet species, and one of the largest overall (larger hamster = more power, theoretically), we&rsquo;ll go with that. A decent average mass for a Syrian hamster is, according to Wikipedia, about <span title="which I looked up, thinking I&rsquo;d need to know it. Turns out, not so much.">120 g</span>. There isn&rsquo;t much variation among Syrian hamsters, either, since pretty much the entire pet and lab population is thought to be descended from a single pair of mated siblings. (Don&rsquo;t be disgusted; rodents do that a lot.)</li>
+			<li><b>hamster wheel:</b> Turns out, there&rsquo;s a lot of hamster wheels out there, and a lot of research <span title="Also, not a lot of precise information concerning individual models.">concerning them</span>. There&rsquo;s market research for companies selling hamster accessories; field research for biologists studying rodent behavior; lab research for studying the habits and abilities of injured or ill rodents; and amateur data, because apparently attaching sensors to your hamster&rsquo;s wheel and learning its running habits is a popular use for things like Arduino and Raspberry Pi. Once again, we&rsquo;ll consult Wikipedia for the most concise breakdown of hamster wheels: Turns out that hamsters (and rodents in general) have no preference concerning construction materials, except that they don&rsquo;t like the risk of falling through, so on traditional metal rung wheels, they prefer a spacing of 9 mm over a spacing of 12 mm. The only concern about plastic wheels is the possibility of chewing, but running actually reduces chewing behavior in hamsters, so we&rsquo;re all right there. All rodents appear to prefer larger wheels if possible (and wheels over actually moving through the world, apparently, to the point that even wild rodents will spend hours on &ldquo;running disks&rdquo; placed in their vicinities), with a preference for wheels of 35 cm diameter over wheels with a diameter of 23 cm, which, in turn, are preferred over wheels with a 17.5 cm diameter. So, for &ldquo;hamster wheel,&rdquo; we&rsquo;re looking at a wheel 35 cm in diameter, made either of steel wire with rungs 9mm apart, or of basic clear plastic.</li>
+			<li><b>charge:</b> Full charge from a completely neutral state? Top-off charge? Refill from half charge? Something in between? Probably the best way to go about this is to copy Tesla&rsquo;s definition of &ldquo;charge&rdquo; and see how many hamster wheels it takes to imitate one of their charging stations. The number and type of charging stations turns out to be far more complicated than I thought it&rsquo;d be, so we&rsquo;ll go with info from Tesla&rsquo;s website. Tesla tends to release information in terms of charging time per mile travelled, but given the <a href="https://www.tesla.com/charging">handy-dandy app</a> on their website, and changing the price/kWh to 10&cent;, it turns out to be pretty easy to use the cost to determine the kWh recharged in a given time. I could go hog-wild and figure out the average charging profile for a Tesla battery at various charge levels, but given that the app itself is probably fairly basic under the hood, my error bars would be unknowable. Instead, I just moved the slider until my 10&cent;/kWh got me $10.00, or 100 kWh. The charging time for a home Nema 14-50 (250 V) outlet, which Tesla claims will charge at 9.6 kW, is 10:24. For a home wall connector configured for a 100 kWh battery, which outputs a maximum of 17.2 kW on a 240 V / 90 A circuit, the time is 5:46. Given the units and relative times, I think it&rsquo;s safe to assume that that&rsquo;s hours and minutes, not minutes and seconds. That means that the app just does basic arithmatic based on the charger ratings, which of course I could have done, but it&rsquo;s nice to have an outside source to check. Also, it&rsquo;s worth noting that, since they give info on the circuit you want hooked up to the charger, this is explicitly based on the charger rather than the circuit.</li></ul></p>
+			<p>What all of this means is that we want to know how many 120 g Syrian hamsters running on 35 cm wheels it would take to charge a Tesla Model S P100D battery (which is rated at 100 kWh, or 360 MJ) in 5:46&ndash;10:24, or, more simply, how many hamster wheels would produce between 9.6 and 17.2 kW of power.</p>
+			<p>At this point, you might be tempted to figure out the force and energy profiles of a running hamster, but it turns out that&rsquo;s actually very difficult information to come by for small animals. (I couldn&rsquo;t find it for geckos, either.) Besides, that&rsquo;s not what we really need. What we need in this case is the amount of energy produced by the <em>wheel</em>. All we need to know about the hamster for now is its speed, which, according to a survey of amateur data collectors playing with Raspberry Pis (they&rsquo;re going to be less accurate, but in this case more data gives us a better average), tops out at around 4.5 mph; however, we&rsquo;re building a home charger, not a Tesla Supercharger&trade;, so their &ldquo;cruising&rdquo; speed is somewhere between 1.5 and 2.5 mph. Averaging that to an easy lope while also getting a convenient metric equivalent, we&rsquo;ll say hamsters can easily sustain 3 kmh for a night. Oh, did I say night? Yeah, hamsters are generally crepuscular, tending towards nocturnal, which actually makes them a better choice for charging your Tesla, at least if you only use it to commute to and from work.</p>
+			<p>It&rsquo;s also worth noting that hamsters can run as far as 9 km in a night. They usually don&rsquo;t make it quite that far, but they can go farther if disturbed the day before (one amateur specifically noted that his hamster usually ran about 5 km per night, but went nearly 10 after his cage was cleaned and his food changed), and this is new technology, so we&rsquo;re going to gather the best distance runners we can get. At 3 kmh, that&rsquo;s only about three hours per night, so however many hamsters we need to get enough power, we&rsquo;ll need to double for the higher power rating or quadruple (technically, 3.5-tuple) for the lower one, which conveniently means we&rsquo;ll need around the same amount of hamsters no matter what to charge in a night.</p>
+			<p>Okay, finally, on to some actual power calculations. Power is energy per unit time, and the energy of a rotating mass is &frac12;I&omega;<sup>2</sup>, where &omega; is the angular velocity in rad/s and I is the moment of inertia in kg<b>&middot;</b>m<sup>2</sup>. Angular velocity is simply linear velocity expressed in units of radians; with a 35 cm wheel, a radius is 17.5 cm, or 0.175 m.<ul>
+				<li>3 kmh = 8.33 <b>&middot;</b> 10<sup>-4</sup> kms</li>
+				<li>8.33 <b>&middot;</b> 10<sup>-4</sup> kms = 8.33 <b>&middot;</b> 10<sup>-1</sup> m/s</li>
+				<li>8.33 <b>&middot;</b> 10<sup>-1</sup> m/s = 4.76 rad/s iff r=1.75 <b>&middot;</b> 10<sup>-1</sup> m</li></ul></p>
+				<p>Moment of inertia is a little trickier, since it requires mass and a little bit of calculus. We can simplify away the calculus, but the only weights I could find were shipping weights (which includes a stand, since most wheels can be used with a stand or clipped to the bars of a cage), and I only found one wheel that did not come with a stand. That 15 cm wheel weighs 2.1 oz, or 60g. Since we can approximate a hamster wheel to a cylinder missing one face, we can scale that up to 35 cm by making the running surface 2&pi;rh / (2&pi;rh + &pi;r<sup>2</sup>) of the total mass, and the back of the wheel &pi;r<sup>2</sup> / (2&pi;rh + &pi;r<sup>2</sup>) of the total; using the product picture and a bit of math, I&rsquo;ve determined that h is about 3 cm. Therefore, 44% of the mass comes from the running surface, and 56% from the back. The back scales to 962 cm<sup>2</sup> from 177, a scale of 5.44:1, and the surface goes to 175 cm<sup>2</sup> from 70.69, a ratio of 2.33:1. So,<ul>
+					<li>(0.44 * 60 * 2.33) + (0.56 * 60 * 5.44) = 244.296 g</li></ul></p>
+				<p>Okay, I think that&rsquo;s the last of the hamster wheel research I need to do for now. Finally, we can calculate the moment of inertia, which, for a rotating body is technically an integral, but for simplicity&rsquo;s sake can be reduced to r<sup>2</sup>m (in m and kg), which means<ul>
+					<li>0.175 m<sup>2</sup> <b>&middot;</b> 0.2443 kg = 7.482 <b>&middot;</b> 10<sup>-3</sup> m<sup>2</sup> <b>&middot;</b> kg</li></ul></p>
+				<p>Taken altogether,<ul>
+					<li>E<sub>k</sub> = &frac12;I&omega;<sup>2</sup></li>
+					<li>E<sub>k</sub> = &frac12; <b>&middot;</b> 0.007482 <b>&middot;</b> 4.76<sup>2</sup></li>
+					<li>E<sub>k</sub> = 8.462 <b>&middot;</b> 10<sup>-2</sup> J</li></ul></p>
+				<p>A joule is the same as a watt second, so we can get the total kWh per hamster per night by multiplying by 3600 <b>&middot</b> 3(to convert to 3 hours) and dividing by 1000 (to convert to kW), giving us 0.914 kWh per hamster per night. That means it&rsquo;d take 110 <span title="Unless you really think 109.4 hamsters will somehow perform better than 109.0 hamsters">perfect hamsters</span> running in their apparently-nonexistent 35 cm plastic wheels to charge your Tesla overnight.</p>
+				<hr>
+				<p>Except&hellip;</p>
+				<p>Remember when I said this could be either a physics problem or an engineering problem? See, if we managed to take 100% of the energy the hamster used to spin the wheel, the hamster wouldn&rsquo;t be able to spin the wheel, now could he? Plus, energy transfer is never 100%, given the laws of thermodynamics and all. There&rsquo;s <em>plenty</em> of places to lose energy in this setup. The basic physics are fun, but when you put things into engineering practice, we start to have some problems.<p>
+				<p>Fortunately while charging a Tesla may be a new purpose, the idea of using hamsters to generate electricity is not a new one, and I&rsquo;m not just talking about cartoons. One <a href="https://www.technologyreview.com/s/412016/harnessing-hamster-power-with-a-nanogenerator/" target="_blank">enterprising researcher</a> even bypassed the wheel entirely to generate electricity from the hamster itself. Given that he can only get about a nanowatt out of his hamsters, I think you might need to invest in some hamster breeding facilities.</p>
+				<p>There are plenty of sources online for hamster generators to charge a small battery for a nightlight, but I think my favorite is the story of <a href="http://www.otherpower.com/hamster.html" target="_blank">Skippy the Hamster</a>. Skippy is the result of a bunch of wind turbine engineers drunkenly crunching numbers at a Christmas party, followed by one of those engineers having his sober mind sparked by a question by an eighth grader asking for advice on a science forum concerning her science fair project. I can&rsquo;t think of a better source for what engineering problems can and can&rsquo;t be overcome when creating a generator than the people who design high-efficiency generators. (Granted, they did limit themselves to supplies they figured an eighth grader could get her hands on, but given that we&rsquo;re talking about a hamster wheel rather than a hamster-driven high-tech turbine, I&rsquo;m fine with that.) Using a circle of magnets and two coils, they made a relatively low-frequency alternator, and in order to maximize output, they hooked it directly to two LEDs facing opposite directions, so that, while running, the generator would always light one or the other. (These experts mention that power loss in a rectifier would be at least half.) Skippy runs at 2&ndash;3 mph, and doesn&rsquo;t generate enough voltage to charge a AA battery. Skippy&rsquo;s team reckons that a higher voltage could be achieved with more coils, but more coils also means a larger percentage of total power lost to generating heat, in addition to providing higher resistance for Skippy&rsquo;s running.</p>
+				<p>This setup (<span title="LED voltage drop per lumen is correlated with wavelength; red LEDs need lower voltage than other colors.">with red LEDs</span>) is enough to provide a nightlight while Skippy is running. However, he could probably deal with more coils; the writeup says that &ldquo;2 LEDs are barely taxing him,&rdquo; at a current draw of 30 mA, and he&rsquo;s been tested as high as 6 LEDs. They guess (and their guess is a good deal better-informed than mine) that he could get as high as 200 mA without tiring, which is an important detail, since a tired hamster doesn&rsquo;t do much running. In fact, they tried running Skippy with the alternator shorted out instead of merely under load, and he quickly tired out and stopped.</p>
+				<p>So, going with Otherpower&rsquo;s numbers (keeping in mind that &ldquo;without tiring the hamster out&rdquo; is a fairly ambiguous limit), along with some more generic hamster numbers, a hamster can generate 200 mA at 2 V for about 3 hours per night. That means that each hamster will give you 0.4 W for 3 hours. Once again, we&rsquo;ve reached the point of simple arithmatic for our chargers. For 9.6 kW, we need 9600 &divide; 0.4 = 24,000 hamsters running at any one time; for 3 hours of running per night and a 10:24 charge, that means we need at least 83,200 hamsters total. To imitate a 17.2 kW charger, we need 17,200 &divide; 0.4 = a whopping 43,000 hamsters at a time, or <span title="or 82,655.56, but I don&rsquo;t think .56 of a hamster will be doing much running">82,656</span> total.</p>
+				<p>Of course, we&rsquo;re talking about charging a battery, which means we&rsquo;re going to need to rectify all that AC into DC. Worse, because that many generators are likely to average out their phases to around 0, we need to rectify each hamster wheel&rsquo;s output individually. Why is that worse? Well, rectifier loss is mostly due to power converted to heat at the diodes. That power increases a little with current, but mostly it comes from the voltage, and it tends not to get much higher than 1 V per diode, which, if we could add all of our power together into a high-current flow at <span title="All Tesla automotive batteries are rated at 24 V, and your charger needs to have a higher voltage than your battery in order to charge it; lower is better for the battery, but higher is a faster charge.">more than 24 V</span>, and <span title="Tesla&rsquo;s home chargers operate at 48 V; their Superchargers operate at a whopping 480 V">more like 48 V</span> first, would be a tiny speed bump. Coming straight off of our 2 V 200 mA hamster wheels, it&rsquo;s a massive hit. A bridge rectifier, even a <span title="A particularly efficient type of rectifier that uses capacitors and a transformer to recapture energy lost to the magnetic field">full-wave bridge rectifier</span> is likely to lose something like 0.7 V to heat and other factors at these low levels of current. That means that instead of 400 mW, we&rsquo;re only getting 1.3 V <b>&middot;</b> 200 mA = 260 mW, or 0.260 W.</p>
+				<p><em>That</em>, in turn, means that we&rsquo;ll need 36,923 or 66,154 hamsters at a time, or 128,000 or 127,160 hamsters total.</p>
+				<p>So, basically, the theoretical minimum is 110 hamsters, but you&rsquo;re probably going to need more like 128 kilohamsters.</p>
+				<p>Or you could just ride a kilohamster to work. I bet that&rsquo;d be more impressive than a Tesla Roadster.</p>
+
+				<p class="copy">&copy;RAG, 2017-11-22</p>
+
+	</body>
+</html>
